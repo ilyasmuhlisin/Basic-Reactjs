@@ -1,4 +1,10 @@
 import React, { Component } from "react";
+import "./header.css";
+//css internal
+// const judul = {
+//   color : "orange",
+//   backgroundColor: "yellow"
+// }
 
 //handleevent menggunakan class
 class Header extends Component {
@@ -44,8 +50,11 @@ class Header extends Component {
         {this.state.statusRendering === true ? (
           // jika lebih dari 1 element bungkus dengan div
           <div>
-            <h1>Selamat Datang</h1>
-            <h2>Silahkan pilih Makanan</h2>
+            {/* css inline penulisan digabung*/}
+            <h1 style={{ color: "green", backgroundColor: "blue" }}>
+              Selamat Datang
+            </h1>
+            <h2 id="judul-kedua">Silahkan pilih Makanan</h2>
           </div>
         ) : (
           <h1>Selamat Tinggal</h1>
