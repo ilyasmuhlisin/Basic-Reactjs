@@ -19,7 +19,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Header />
+        <Header list="3 terbaik"/>
         <List/>
         <Content />
         {/* props/property */}
