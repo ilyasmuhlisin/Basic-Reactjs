@@ -1,4 +1,11 @@
 import React, { Component } from "react";
+//import dari eksternal file
+import menuMakanan from "./lib/Food";
+//lists dan keys dari internal file
+// const menuMakanan = [
+//   { nama: "Mie Goreng", harga: 10000 },
+//   { nama: "Mie Ayam", harga: 20000 },
+// ];
 
 //setState
 class Main extends Component {
@@ -66,7 +73,7 @@ class Main extends Component {
           placeholder="kota"
         />
         {/* membuat list dari data state perulangan map */}
-        {this.props.menuMakanan.map((value, index) => {
+        {menuMakanan.map((value, index) => {
           return (
             //   jika perulangan data harus menambah keys
             <div keys={index}>
