@@ -10,6 +10,10 @@ class Main extends Component {
       title2: "Menu Minuman",
       inputValue: "",
       inputKota: "",
+      menuMakanan: [
+        { nama: "Mie Goreng", harga: 10000 },
+        { nama: "Mie Ayam", harga: 20000 },
+      ],
     };
     this.rubahData = this.rubahData.bind(this);
     this.handleChange = this.handleChange.bind(this);
@@ -26,7 +30,7 @@ class Main extends Component {
   }
 
   //method dinamis untuk lebih dari input
-  handleChange(value,e) {
+  handleChange(value, e) {
     //setState di input
     this.setState({ [value]: e.target.value });
     // console.log(e.target.value)
@@ -61,6 +65,17 @@ class Main extends Component {
           onChange={(e) => this.handleChange("inputKota", e)}
           placeholder="kota"
         />
+        {/* membuat list dari data state perulangan map */}
+        {this.state.menuMakanan.map((value, index) => {
+          return (
+            //   jika perulangan data harus menambah keys
+            <div keys={index}>
+              <p>No : {index + 1}</p>
+              <p>Nama Makanan : {value.nama}</p>
+              <p>Harga : {value.harga}</p>
+            </div>
+          );
+        })}
       </div>
     );
   }
