@@ -24,7 +24,17 @@ class Main extends Component {
     });
   }
   handleChange(e){
-    console.log(e.target.value)
+    //setState di input
+    this.setState({inputValue: e.target.value})
+    // console.log(e.target.value)
+
+    //cara lainnya
+    // const eventTarget = e.target.value;
+    // this.setState((state,props)=>{
+    //     return {
+    //         inputValue: eventTarget
+    //     }
+    // })
   }
   render() {
     return (
