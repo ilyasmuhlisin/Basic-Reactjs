@@ -2,11 +2,12 @@ import React from "react";
 
 //handlingevent pada function
 const Top = () => {
-  function handlePesan() {
+  function handlePesan(value) {
     alert("Halaman Top Tampil");
+    alert(value);
   }
   return (
-    <a href="/" onClick={handlePesan}>
+    <a href="/" onClick={()=>handlePesan("Pesan Dari Top")}>
       Halaman Top
     </a>
   );
