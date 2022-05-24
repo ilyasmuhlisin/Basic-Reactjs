@@ -1,15 +1,6 @@
 import React, { Component } from "react";
-
-//menggunakan class dalam 1 file
-class Header extends Component {
-  render () {
-    return(
-      <div>
-        <h2>Makanan</h2>
-      </div>
-    )
-  }
-}
+//import class component terpisah
+import Header from "./Header"
 
 //menggunakan class
 class App extends Component {
