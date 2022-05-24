@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 
+//handleevent menggunakan class
 class Header extends Component {
   //state seperti variable namun lebih dinamis dan tidak perlu render ulang setiap tambahan data"
   constructor(props){
@@ -9,6 +10,12 @@ class Header extends Component {
       daftar:  "Daftar Makanan Nusantara",
       dataList: this.props.list
     }
+    //harus menulis diconstructor
+    this.handlePesan = this.handlePesan.bind(this)
+  }
+
+  handlePesan(){
+    alert(this.state.daftar)
   }
   render() {
     return (
@@ -16,6 +23,7 @@ class Header extends Component {
         <h2>Makanan</h2>
         <p>{this.state.daftar}</p>
         <p>{this.state.dataList}</p>
+        <a href="/" onClick={this.handlePesan}>Halaman Header</a>
       </div>
     );
   }

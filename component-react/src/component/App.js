@@ -2,6 +2,7 @@ import React, { Component } from "react";
 //import class component terpisah
 import Header from "./Header"
 //import function component
+import Top from "./Top";
 import Footer from "./Footer";
 import List from "./List";
 
@@ -20,6 +21,7 @@ class App extends Component {
     return (
       <div>
         <Header list="3 terbaik"/>
+        <Top/>
         <List/>
         <Content />
         {/* props/property */}
