@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import Header from "./Header"
 //import function component
 import Footer from "./Footer";
+import List from "./List";
 
 //membuat fucntion component dalam 1 file
 const Content = () => {
@@ -19,7 +20,7 @@ class App extends Component {
     return (
       <div>
         <Header />
-        <h1> Rendering Element </h1>
+        <List/>
         <Content />
         <Footer />
       </div>
