@@ -3,9 +3,10 @@ import React, { Component } from "react";
 import Header from "./Header";
 //import function component
 import Top from "./Top";
-import Main from "./Main";
+// import Main from "./Main";
 import Footer from "./Footer";
 // import List from "./List";
+import Form from "./Form";
 
 //membuat fucntion component dalam 1 file
 const Content = () => {
@@ -23,12 +24,13 @@ class App extends Component {
       <div>
         <Header list="3 terbaik" />
         <Top />
-        <Main
+        <Form />
+        {/* <Main
           menuMakanan={[
             { nama: "Mie Goreng", harga: 10000 },
             { nama: "Mie Ayam", harga: 20000 },
           ]}
-        />
+        /> */}
         {/* <List/> */}
         <Content />
         {/* props/property */}
