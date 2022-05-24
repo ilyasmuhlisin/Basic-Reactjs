@@ -22,7 +22,8 @@ class App extends Component {
         <Header />
         <List/>
         <Content />
-        <Footer />
+        {/* props/property */}
+        <Footer name="Makanan Nusantara" tahun="2000"/>
       </div>
     );
   }

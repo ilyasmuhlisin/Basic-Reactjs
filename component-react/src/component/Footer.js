@@ -1,10 +1,13 @@
 import React from "react";
 
 //membuat fucntion component dalam 1 file
-const Footer = () => {
+//props di function
+const Footer = (props) => {
   return  (
     <div>
-      <h4>Halaman Footer</h4>
+      {/* sesuai nama properti di app */}
+      <h4>Halaman Footer {props.name}</h4>
+      <p>@{props.tahun}</p>
     </div>
   )
 }

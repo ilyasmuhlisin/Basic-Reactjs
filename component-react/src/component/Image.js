@@ -1,11 +1,12 @@
 import React, { Component } from "react";
 
+//props di class
 class Image extends Component {
     render(){
         return (
           <img
-            src="https://s3-ap-southeast-1.amazonaws.com/niomic/img/sample/food1.jpg"
-            width="500"
+            src={this.props.linkImg}
+            width={this.props.lebar}
           />
         );
     }
