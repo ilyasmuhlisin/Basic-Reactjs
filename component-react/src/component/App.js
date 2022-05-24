@@ -6,7 +6,8 @@ import Top from "./Top";
 // import Main from "./Main";
 import Footer from "./Footer";
 // import List from "./List";
-import Form from "./Form";
+// import Form from "./Form";
+import CustomInput from "./CustomInput";
 
 //membuat fucntion component dalam 1 file
 const Content = () => {
@@ -24,7 +25,8 @@ class App extends Component {
       <div>
         <Header list="3 terbaik" />
         <Top />
-        <Form />
+        <CustomInput/>
+        {/* <Form /> */}
         {/* <Main
           menuMakanan={[
             { nama: "Mie Goreng", harga: 10000 },
