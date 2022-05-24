@@ -7,26 +7,35 @@ class Main extends Component {
     this.state = {
       //seperti nama var
       title: "Menu Makanan",
-      title2: "Menu Minuman"
+      title2: "Menu Minuman",
+      inputValue: "Nasi Padang"
     };
     this.rubahData = this.rubahData.bind(this);
+    this.handleChange = this.handleChange.bind(this);
   }
-//   rubahData() {
-//     this.setState({ title: "Pilih Makanan" });
-//   }
+  //   rubahData() {
+  //     this.setState({ title: "Pilih Makanan" });
+  //   }
   //penulisan setState lainnya
-  rubahData(){
-      //fungsi parameter jika datanya membutuhkan state
-      this.setState((state,props)=>{
-          return{ title:state.title2,title2: state.title }
-      })
-    }
+  rubahData() {
+    //fungsi parameter jika datanya membutuhkan state
+    this.setState((state, props) => {
+      return { title: state.title2, title2: state.title };
+    });
+  }
+  handleChange(e){
+    console.log(e.target.value)
+  }
   render() {
     return (
       <div>
         <h3>{this.state.title}</h3>
         <h2>{this.state.title2}</h2>
         <button onClick={this.rubahData}>Rubah Data</button>
+        {/* set default input value */}
+        <br />
+        <br />
+        <input type="text"value={this.state.inputValue} onChange={this.handleChange}/>
       </div>
     );
   }
