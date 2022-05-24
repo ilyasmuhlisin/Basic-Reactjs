@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import Header from "./Header"
 //import function component
 import Top from "./Top";
+import Main from "./Main";
 import Footer from "./Footer";
 import List from "./List";
 
@@ -22,6 +23,7 @@ class App extends Component {
       <div>
         <Header list="3 terbaik"/>
         <Top/>
+        <Main/>
         <List/>
         <Content />
         {/* props/property */}
