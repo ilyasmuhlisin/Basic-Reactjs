@@ -1,14 +1,27 @@
 import React, { Component } from "react";
 //import class component terpisah
 import Header from "./Header"
+//import function component
+import Footer from "./Footer";
+
+//membuat fucntion component dalam 1 file
+const Content = () => {
+  return  (
+    <div>
+      <h4>Halaman Content</h4>
+    </div>
+  )
+}
 
 //menggunakan class
 class App extends Component {
   render() {
     return (
       <div>
-        <Header/>
+        <Header />
         <h1> Rendering Element </h1>
+        <Content />
+        <Footer />
       </div>
     );
   }
