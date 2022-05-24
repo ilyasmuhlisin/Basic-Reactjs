@@ -8,7 +8,8 @@ class Main extends Component {
       //seperti nama var
       title: "Menu Makanan",
       title2: "Menu Minuman",
-      inputValue: "Nasi Padang"
+      inputValue: "",
+      inputKota: "",
     };
     this.rubahData = this.rubahData.bind(this);
     this.handleChange = this.handleChange.bind(this);
@@ -23,9 +24,11 @@ class Main extends Component {
       return { title: state.title2, title2: state.title };
     });
   }
-  handleChange(e){
+
+  //method dinamis untuk lebih dari input
+  handleChange(value,e) {
     //setState di input
-    this.setState({inputValue: e.target.value})
+    this.setState({ [value]: e.target.value });
     // console.log(e.target.value)
 
     //cara lainnya
@@ -45,7 +48,19 @@ class Main extends Component {
         {/* set default input value */}
         <br />
         <br />
-        <input type="text"value={this.state.inputValue} onChange={this.handleChange}/>
+        <input
+          type="text"
+          value={this.state.inputValue}
+          //   parameter untuk update
+          onChange={(e) => this.handleChange("inputValue", e)}
+          placeholder="nama"
+        />
+        <input
+          type="text"
+          value={this.state.inputKota}
+          onChange={(e) => this.handleChange("inputKota", e)}
+          placeholder="kota"
+        />
       </div>
     );
   }
