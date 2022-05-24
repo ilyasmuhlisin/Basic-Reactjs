@@ -1,33 +1,38 @@
 import React, { Component } from "react";
 //import class component terpisah
-import Header from "./Header"
+import Header from "./Header";
 //import function component
 import Top from "./Top";
 import Main from "./Main";
 import Footer from "./Footer";
-import List from "./List";
+// import List from "./List";
 
 //membuat fucntion component dalam 1 file
 const Content = () => {
-  return  (
+  return (
     <div>
       <h4>Halaman Content</h4>
     </div>
-  )
-}
+  );
+};
 
 //menggunakan class
 class App extends Component {
   render() {
     return (
       <div>
-        <Header list="3 terbaik"/>
-        <Top/>
-        <Main/>
-        <List/>
+        <Header list="3 terbaik" />
+        <Top />
+        <Main
+          menuMakanan={[
+            { nama: "Mie Goreng", harga: 10000 },
+            { nama: "Mie Ayam", harga: 20000 },
+          ]}
+        />
+        {/* <List/> */}
         <Content />
         {/* props/property */}
-        <Footer name="Makanan Nusantara" tahun="2000"/>
+        <Footer name="Makanan Nusantara" tahun="2000" />
       </div>
     );
   }

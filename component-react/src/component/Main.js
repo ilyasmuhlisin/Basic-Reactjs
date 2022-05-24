@@ -66,7 +66,7 @@ class Main extends Component {
           placeholder="kota"
         />
         {/* membuat list dari data state perulangan map */}
-        {this.state.menuMakanan.map((value, index) => {
+        {this.props.menuMakanan.map((value, index) => {
           return (
             //   jika perulangan data harus menambah keys
             <div keys={index}>
