@@ -9,6 +9,18 @@ const initialState = {
 // pengambilan data initialState dan diolah
 const reducer = (state = initialState, action) => {
   console.log("reducer berjalan", action);
+  // fungsi menambahkan nilai
+  // karena yang dikirimkan di counter property type
+  switch (action.type) {
+    case "INCREMENT":
+      // state disini menandakan jika tidak diklik menampilkan nilai awal
+      return Object.assign({}, state, { count: state.count + 1 });
+    case "DECREMENT":
+      // state disini menandakan jika tidak diklik menampilkan nilai awal
+      return Object.assign({}, state, { count: state.count - 1 });
+    default:
+      return state;
+  }
   //dikembalikan di state counter
   return state;
 };
