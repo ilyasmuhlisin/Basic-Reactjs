@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import AppRoutes from "./appRoutes";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 import reportWebVitals from "./reportWebVitals";
 // import 'semantic-ui-css/semantic.min.css'
 import { Auth0Provider } from "@auth0/auth0-react";
@@ -9,11 +10,17 @@ import { Provider } from "react-redux";
 
 // global state
 const stateFilm = {
-  tes: "coba redux",
+  activeItem: "home",
 };
 
-const reducerFilm = (state = stateFilm) => {
-  return state;
+const reducerFilm = (state = stateFilm, action) => {
+  switch (action.type) {
+    case "ACTIVE_ITEM":
+      var stateActiveItem = { ...state, activeItem: action.Activeitem };
+      return stateActiveItem;
+    default:
+      return state;
+  }
 };
 
 const store = createStore(reducerFilm);
