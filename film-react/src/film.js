@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Grid, Image, Header, Card, Icon } from "semantic-ui-react";
+import { Grid, Image, Header, Card, Icon, Input } from "semantic-ui-react";
 import { connect } from "react-redux";
 import axios from "axios";
 
@@ -34,6 +34,31 @@ class Film extends Component {
     }
   };
 
+  getDataSearch = async (e) => {
+    // jika data kosong jalankan data awal
+    if (e.target.value === "") {
+      this.getDataFilm();
+    } else {
+      try {
+        //   untuk menarik data dari json
+        //cross untuk mencegah error dalam limiter
+        await axios
+          .get(`https://api.tvmaze.com/search/shows?q=${e.target.value}`, {
+            crossDomain: true,
+          })
+          .then((res) => {
+            console.log(res.data);
+            let dataRes = res.data.slice(0, 10);
+            this.setState({
+              dataFilm: dataRes,
+            });
+          });
+      } catch (error) {
+        alert(JSON.stringify(error.message));
+      }
+    }
+  };
+
   componentDidMount = async () => {
     await this.getDataFilm();
   };
@@ -55,6 +80,15 @@ class Film extends Component {
               />
             </Grid.Column>
             <Grid.Column width={10}>
+              <div style={{ marginBottom: 20 }}>
+                <Input
+                  icon="search"
+                  placeholder="Search..."
+                  onChange={(e) => {
+                    this.getDataSearch(e);
+                  }}
+                />
+              </div>
               {/* card data films */}
               <Grid columns={3} divided>
                 {this.state.dataFilm.map((data, key) => {
